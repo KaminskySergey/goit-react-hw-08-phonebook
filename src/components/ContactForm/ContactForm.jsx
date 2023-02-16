@@ -4,12 +4,17 @@ import { nanoid } from 'nanoid'
 
 import {Form, FormInput, FormButton} from './ContactForm.styled';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectedContacts } from 'redux/Contacts/contacts.selectors';
+import { addContactsThunk } from 'redux/Contacts/contacts.thunk';
 
 
 const ContactForm = ({onSubmit}) => {
+    const dispatch = useDispatch()
+
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
-    
+    const contacts = useSelector(selectedContacts)
     const nameId = nanoid();
     const telId = nanoid()
 
@@ -26,10 +31,28 @@ const ContactForm = ({onSubmit}) => {
                 return;
     }
 }
+const addNameForm = (data) => {
+    console.log(data);
+        const filterByName = contacts.some(el => el.name === data.name)
+        if(filterByName){
+              alert(`${data.name} is already in contacts`);
+            }
+    
+        else{
+          const itemName = {
+            id: nanoid(),
+            ...data,
+            
+          }
+          
+          dispatch(addContactsThunk(itemName))
+          console.log(itemName, '4')
+        }
+    }
 
     const handleSubmit = (e) => {
     e.preventDefault()
-    onSubmit({name, phone});
+    addNameForm({name, phone});
     
     reset()
 }
@@ -70,9 +93,6 @@ return (
         )
 }
 
-ContactForm.propTypes = {
-onSubmit: PropTypes.func.isRequired
-}
 
 
 export default ContactForm;

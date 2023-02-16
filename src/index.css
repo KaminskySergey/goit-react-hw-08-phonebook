@@ -1,5 +1,7 @@
 @import-normalize; /* bring in normalize.css styles */
-
+*{
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 20px;
   background: linear-gradient(#000eff, #aecb19) fixed;
+  
 }
 
 div{
@@ -20,4 +23,24 @@ div{
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  
+}
+
+p{
+  margin: 0;
+  padding: 0;
 }
