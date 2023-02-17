@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+
 
 import { nanoid } from 'nanoid'
 import Box from 'components/Box/Box'

@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
+
 import {ContactItem, ContactText, ContactButton} from './ContactList.styled'
 import Box from 'components/Box/Box'
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteConactsThunk } from 'redux/Contacts/contacts.thunk';
-import { selectedIsLoading, selectedSearchInput } from 'redux/Contacts/contacts.selectors';
+import { selectedSearchInput } from 'redux/Contacts/contacts.selectors';
 
 
 export const ContactList = ({itemName}) => {

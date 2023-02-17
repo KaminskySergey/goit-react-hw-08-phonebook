@@ -1,25 +1,12 @@
-import { Link } from "react-router-dom"
-import { HeaderCont, List } from "./Header.styled"
+import Navigation from "components/Navigation/Navigation"
+
+import { HeaderCont } from "./Header.styled"
 
 const Header = () => {
     return (
         <>
         <HeaderCont>
-            <Link to=''>
-                Logo
-            </Link>
-            <List>
-                <li>
-                    <Link to='/join'>
-                    <button type="button">Sign In</button>
-                    </Link>
-                </li>
-                <li>
-                    <Link to='/login'>
-                    <button type="button">Log In</button>
-                    </Link>
-                </li>
-            </List>
+            <Navigation />
         </HeaderCont>
         </>
     )

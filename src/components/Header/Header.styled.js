@@ -11,10 +11,3 @@ padding: 0 16px;
 align-items: center;
 `
 
-export const List = styled.ul`
-display: flex;
-margin-left: auto;
-li:not(:first-child){
-    margin-left: 16px;
-}
-`

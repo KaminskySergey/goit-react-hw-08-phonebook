@@ -41,7 +41,7 @@ const  App = () => {
       <Layout>
         <Routes>
            <Route path='' element={<MyContacts />} />
-           <Route path='/join' element={<JoinPage />} />
+           <Route path='/register' element={<JoinPage />} />
            <Route path='/login' element={<LoginPage />} />
         </Routes>
       </Layout>
