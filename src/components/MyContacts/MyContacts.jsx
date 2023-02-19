@@ -2,14 +2,19 @@ import  Box  from "components/Box/Box"
 import  ContactForm  from "components/ContactForm/ContactForm"
 import { ContactList } from "components/ContactList/ContactList"
 import { Filter } from "components/Filter/Filter"
+import { useEffect } from "react"
 import { ColorRing } from "react-loader-spinner"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { selectedIsLoading, selectedError } from "redux/Contacts/contacts.selectors"
+import { getContactsThunk } from "redux/Contacts/contacts.thunk"
 
 const MyContacts = () => {
     const isLoading = useSelector(selectedIsLoading)
     const error = useSelector(selectedError)
-    
+    const dispatch = useDispatch()
+    useEffect(() => {
+      dispatch(getContactsThunk())
+    }, [dispatch])
     return (
         <>
         <Box display="flex" justifyContent="center" width="650px" flexDirection="column" alignItems="center" border='2px solid black'  borderRadius="10px" p={16} backgroundColor='rgba(0,0,0,0.7)'>

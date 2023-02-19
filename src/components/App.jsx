@@ -11,7 +11,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 // import { filterActions } from 'redux/Filter/filterSlice'
 // import { contactsAddActions, contactsDeleteActions } from 'redux/Contacts/contactsSlice'
-import { getContactsThunk } from 'redux/Contacts/contacts.thunk'
+
 // import { selectedContacts, selectedError, selectedIsLoading, selectedSearchInput } from 'redux/Contacts/contacts.selectors'
 // import { selectedFilter } from 'redux/Filter/filter.selectors'
 import Layout from 'pages/Layout/Layout'
@@ -34,9 +34,9 @@ const  App = () => {
   console.log(isRefresh, 'isRefresh')
   
   
-  useEffect(() => {
-    dispatch(getContactsThunk())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(getContactsThunk())
+  // }, [dispatch])
   
   useEffect(() => {
     dispatch(refresh())
@@ -44,18 +44,18 @@ const  App = () => {
 
     return (
       <>
+        {!isRefresh &&
       <BrowserRouter basename="goit-react-hw-08-phonebook">
       <Layout>
-        {!isRefresh &&
         <Routes>
         <Route path='' element={<Home />} />
         <Route path='/register' element={<RestrictedRoute component={JoinPage} redirectTo='/phonebook'/> } />
         <Route path='/login' element={<RestrictedRoute component={LoginPage} redirectTo='/phonebook'/> } />
         <Route path='/phonebook' element={<PrivateRoute component={MyContacts} redirectTo='/login'/> } />
         </Routes>
-        }
       </Layout>
       </BrowserRouter>
+        }
       </>
     )
 };

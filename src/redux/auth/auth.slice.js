@@ -52,7 +52,7 @@ const authSlice = createSlice({
 }) 
 
 const persistConfig = {
-    key: 'root',
+    key: 'user',
     storage,
     whitelist: ['token'],
   }

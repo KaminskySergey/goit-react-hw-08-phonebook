@@ -25,7 +25,7 @@ export const register = createAsyncThunk('auth/register', async (credentials, th
 
 
 export const logIn = createAsyncThunk('auth/login', async (credentials, thunkAPI) => {
-    console.log(thunkAPI, 'thunkAPI')
+    console.log(credentials, 'thunkAPI')
     try {
         const {data} = await axios.post('/users/login', credentials)
         console.log(data, 'logIn')
