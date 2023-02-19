@@ -1,24 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { List } from "./Navigation.styled";
 
+const getActiveNav= ({isActive}) => {
+    return isActive ? 'activeNav link_Nav' : 'link_Nav';
+    
+}
 const Navigation = () => {
     return (
         <>
-        <Link to=''>
-                Logo
-            </Link>
             <List>
                 <li>
-                    <Link to='/register'>
-                    <button type="button">Sign In</button>
-                    </Link>
+                    <NavLink className={getActiveNav} to='/register'>
+                    Sign In
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to='/login'>
-                    <button type="button">Log In</button>
-                    </Link>
+                    <NavLink className={getActiveNav} to='/login'>
+                    Log In
+                    </NavLink>
                 </li>
-            </List>
+        </List>
         </>
     )
 }

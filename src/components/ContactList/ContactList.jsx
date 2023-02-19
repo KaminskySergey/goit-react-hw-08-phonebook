@@ -20,7 +20,7 @@ export const ContactList = ({itemName}) => {
         <Box as="ul" p={0} m={0}>
         {handleSearchInput.map(el => (
             <ContactItem key={el.id}>
-                <ContactText>{el.name}: {el.phone}</ContactText>
+                <ContactText>{el.name}: {el.number}</ContactText>
                 <ContactButton type="button" onClick={() => handleDeleteContact(el.id)}>Delete</ContactButton>
             </ContactItem>
             

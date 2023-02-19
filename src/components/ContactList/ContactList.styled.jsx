@@ -17,6 +17,7 @@ export const ContactItem = styled.li`
 `
 export const ContactText = styled.p`
     font-size: ${p => p.theme.space[3]}px;
+    color: green;
 `
 
 export const ContactButton = styled.button`

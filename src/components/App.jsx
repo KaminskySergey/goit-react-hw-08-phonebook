@@ -8,7 +8,7 @@
 
 
 import { useEffect } from "react"
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 // import { filterActions } from 'redux/Filter/filterSlice'
 // import { contactsAddActions, contactsDeleteActions } from 'redux/Contacts/contactsSlice'
 import { getContactsThunk } from 'redux/Contacts/contacts.thunk'
@@ -19,31 +19,41 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MyContacts from './MyContacts/MyContacts'
 import JoinPage from "./JoinPage/JoinPage"
 import LoginPage from "./LoginPage/LoginPage"
+import { refresh } from "redux/auth/auth.operations"
+import { selectedIsRefreshUser } from "redux/auth/auth.selectors"
+import Home from "./Home/Home"
+import { RestrictedRoute } from "./RestrictedRoute"
+import { PrivateRoute } from "./PrivateRoute"
 
 
 
 
 const  App = () => {
   const dispatch = useDispatch()
-  
-  
+  const isRefresh = useSelector(selectedIsRefreshUser)
+  console.log(isRefresh, 'isRefresh')
   
   
   useEffect(() => {
     dispatch(getContactsThunk())
   }, [dispatch])
-
   
+  useEffect(() => {
+    dispatch(refresh())
+  }, [dispatch])
 
     return (
       <>
       <BrowserRouter basename="goit-react-hw-08-phonebook">
       <Layout>
+        {!isRefresh &&
         <Routes>
-           <Route path='' element={<MyContacts />} />
-           <Route path='/register' element={<JoinPage />} />
-           <Route path='/login' element={<LoginPage />} />
+        <Route path='' element={<Home />} />
+        <Route path='/register' element={<RestrictedRoute component={JoinPage} redirectTo='/phonebook'/> } />
+        <Route path='/login' element={<RestrictedRoute component={LoginPage} redirectTo='/phonebook'/> } />
+        <Route path='/phonebook' element={<PrivateRoute component={MyContacts} redirectTo='/login'/> } />
         </Routes>
+        }
       </Layout>
       </BrowserRouter>
       </>

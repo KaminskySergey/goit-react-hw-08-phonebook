@@ -6,7 +6,14 @@ import { initContacts } from './Contacts/contacts.init-state';
 import { initFilter } from './Filter/filter.init-state';
 import { authReducer } from "./auth/auth.slice";
 import { initAuth } from "./auth/auth.init-state";
-
+import persistStore from "redux-persist/es/persistStore";
+import { 
+    FLUSH,
+    REHYDRATE,
+    PAUSE,
+    PERSIST,
+    PURGE,
+    REGISTER, } from 'redux-persist'
 
 const initState = {
     contacts: initContacts,
@@ -23,6 +30,14 @@ export const store = configureStore({
         filter: filterReducer,
         user: authReducer,
     },
-
+    
+    middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+    
 })
 
+export const persistor = persistStore(store)

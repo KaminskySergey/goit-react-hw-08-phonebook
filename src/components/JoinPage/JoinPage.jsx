@@ -1,7 +1,9 @@
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Button, Form, Input, Label, Title } from "./JoinPage.styled";
 import { register } from "redux/auth/auth.operations";
+import Box from "components/Box/Box";
 
 // const initialState = {
 //     name: '',
@@ -48,26 +50,37 @@ const JoinPage = () => {
     }
     return (
         <>
-        <form onSubmit={handleSubmit}>
-            <h2>Join Page</h2>
-            <div>
-                <label htmlFor='1'>
-                    <input type="name" value={name} name="name" pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$" onChange={(e) => handleChange(e)}/>
-                </label>
-            </div>
-            <div>
-                <label htmlFor='2'>
-                    <input type="email" value={email} name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" onChange={(e) => handleChange(e)}/>
-                </label>
-            </div>
-            <div>
-                <label htmlFor='3'>
-                    <input type="password" value={password} name="password" onChange={(e) => handleChange(e)}/>
-                </label>
-            </div>
+        <Form onSubmit={handleSubmit}>
+            <Title style={{textAlign: "center"}}>REGISTRATION</Title>
+            <Box display='flex' flexDirection='column'alignItems='flex-start' mb={16}>
             
-            <button type="submit">SUBMIT</button>
-        </form>
+                <Label>
+                <label htmlFor='1'>
+                Name:
+                    <Input style={{marginLeft: 41}} placeholder='Name' type="name" value={name} name="name" pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$" onChange={(e) => handleChange(e)}/>
+                </label>
+                </Label>
+            
+            
+                <Label>
+                <label htmlFor='2'>
+                Email:
+                    <Input style={{marginLeft: 44}} placeholder='Email'  type="email" value={email} name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" onChange={(e) => handleChange(e)}/>
+                </label>
+                </Label>
+            
+            
+                <Label>
+                <label htmlFor='3'>
+                Password:
+                    <Input style={{marginLeft: 16}} placeholder='Password'  type="password" value={password} name="password" onChange={(e) => handleChange(e)}/>
+                </label>
+                </Label>
+            
+            </Box>
+            
+            <Button type="submit">OK</Button>
+        </Form>
         </>
     )
 }

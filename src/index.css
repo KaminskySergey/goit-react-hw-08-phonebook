@@ -44,3 +44,80 @@ p{
   margin: 0;
   padding: 0;
 }
+
+.link_getStart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 128px;
+  height: 32px;
+  background-color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 8px 16px;
+  transition: all 250ms;
+  color: blue;
+}
+
+.link_getStart:hover, .link_getStart:focus {
+  outline: 3px solid black;
+  transform: scale(1.1);
+}
+
+.link_Logo {
+  color: gold;
+  font-weight: 700;
+  position: relative;
+  transition: 250ms;
+}
+.link_home:hover, .link_home:focus{
+color: rgb(153, 130, 0);
+}
+
+.link_My {
+  position: relative;
+}
+.active::before {
+  content: ''; /* Выводим пустое содержимое */
+    position: absolute; /* Абсолютное позиционирование */
+    background: red; /* Цвет линии */
+    left: 0; /* Положение линии слева */
+    bottom: -5px; /* Положение линии */
+    width: 100%; /* Линия на ширину текста */
+    height: 2px;
+}
+
+.link_Nav{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  overflow: hidden;
+width: 86px;
+height: 32px;
+
+border-radius: 8px;
+padding: 8px;
+transition: all 250ms;
+border: none;
+font-weight: 700;
+}
+.link_Nav:hover, .link_Nav:focus {
+  background-color: #00c0ff;
+  color: black;
+  outline: 3px solid gold;
+  transform: scale(1.1);
+
+}
+
+.activeNav::before {
+  content: ''; /* Выводим пустое содержимое */
+    position: absolute; /* Абсолютное позиционирование */
+    background: rgb(0, 0, 0, 0.5); /* Цвет линии */
+    left: 0; /* Положение линии слева */
+    bottom: 0; /* Положение линии */
+    width: 100%; /* Линия на ширину текста */
+    height: 100%;
+}

@@ -45,7 +45,7 @@ const addNameForm = (data) => {
             
           }
           
-          dispatch(addContactsThunk(itemName))
+          dispatch(addContactsThunk({name: data.name, number: data.phone}))
           console.log(itemName, '4')
         }
     }
