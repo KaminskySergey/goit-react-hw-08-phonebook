@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { logOut } from "redux/auth/auth.operations";
 import { selectedUser } from "redux/auth/auth.selectors";
-import { display } from "styled-system";
+
 const getActiveNav= ({isActive}) => {
     return isActive ? 'activeNav link_Nav' : 'link_Nav';
     
