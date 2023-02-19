@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom"
 import { selectedIsLoadingUser } from "redux/auth/auth.selectors"
 
 import { HeaderCont } from "./Header.styled"
+
 const getActiveLink = ({isActive}) => {
     return isActive ? 'active link_Logo' : 'link_Logo';
     

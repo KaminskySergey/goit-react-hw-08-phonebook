@@ -5,11 +5,6 @@ import { Button, Form, Input, Label, Title } from "./JoinPage.styled";
 import { register } from "redux/auth/auth.operations";
 import Box from "components/Box/Box";
 
-// const initialState = {
-//     name: '',
-//     email: '',
-//     password: '',
-//   };
 
 const JoinPage = () => {
     // const [values, setValue] = useState(initialState)
