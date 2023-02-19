@@ -14,7 +14,7 @@ const getActiveLink = ({isActive}) => {
 const Header = () => {
     const isLoading = useSelector(selectedIsLoadingUser)
     
-    console.log(isLoading, 'ggggggg')
+    // console.log(isLoading, 'ggggggg')
     return (
         <>
         <HeaderCont>

@@ -31,7 +31,7 @@ const JoinPage = () => {
     }
 
     const handleSubmit = async (e) => {
-        console.log(e.target.elements.name)
+        // console.log(e.target.elements.name)
         e.preventDefault()
         dispatch(register({name, email, password}))
         

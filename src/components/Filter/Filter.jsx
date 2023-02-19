@@ -14,7 +14,7 @@ export const Filter = () => {
     const filterId = nanoid()
     
     const handleFilter = (e) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         dispatch(filterActions(e.target.value))
 }
         return (

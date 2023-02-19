@@ -12,7 +12,7 @@ const initialState = {
 
   const LoginPage = () => {
     const [value, setValue] = useState(initialState)
-    console.log(value, 'value')
+    // console.log(value, 'value')
     const dispatch = useDispatch()
     const handleChange = (e) => {
         const {name, value} = e.target;
