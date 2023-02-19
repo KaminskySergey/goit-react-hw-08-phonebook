@@ -31,12 +31,10 @@ import { PrivateRoute } from "./PrivateRoute"
 const  App = () => {
   const dispatch = useDispatch()
   const isRefresh = useSelector(selectedIsRefreshUser)
-  console.log(isRefresh, 'isRefresh')
+  // console.log(isRefresh, 'isRefresh')
   
   
-  // useEffect(() => {
-  //   dispatch(getContactsThunk())
-  // }, [dispatch])
+  
   
   useEffect(() => {
     dispatch(refresh())
@@ -55,7 +53,7 @@ const  App = () => {
         </Routes>
       </Layout>
       </BrowserRouter>
-        }
+      }
       </>
     )
 };

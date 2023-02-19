@@ -14,7 +14,7 @@ export const ContactList = ({itemName}) => {
         dispatch(deleteConactsThunk(contactId))
         
       }
-    console.log(itemName)
+    // console.log(itemName)
     return (
         <>
         <Box as="ul" p={0} m={0}>

@@ -32,7 +32,7 @@ const ContactForm = ({onSubmit}) => {
     }
 }
 const addNameForm = (data) => {
-    console.log(data);
+    // console.log(data);
         const filterByName = contacts.some(el => el.name === data.name)
         if(filterByName){
               alert(`${data.name} is already in contacts`);
@@ -46,7 +46,7 @@ const addNameForm = (data) => {
           }
           
           dispatch(addContactsThunk({name: data.name, number: data.phone}))
-          console.log(itemName, '4')
+          
         }
     }
 
